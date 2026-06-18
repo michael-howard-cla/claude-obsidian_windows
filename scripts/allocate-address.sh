@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # allocate-address.sh — atomic creation-order address allocation for the vault.
 #
 # Reserves the next address of the form c-NNNNNN and increments the counter

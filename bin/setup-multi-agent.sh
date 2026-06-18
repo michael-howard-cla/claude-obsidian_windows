@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # claude-obsidian: multi-agent skill installer
 # Symlinks the skills/ directory into each AI agent's expected location.
 # Idempotent: safe to run multiple times.

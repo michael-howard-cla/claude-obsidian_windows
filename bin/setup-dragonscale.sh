@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # setup-dragonscale.sh — opt-in installer for DragonScale Memory.
 #
 # Provisions the runtime files that the wiki-ingest and wiki-lint skills

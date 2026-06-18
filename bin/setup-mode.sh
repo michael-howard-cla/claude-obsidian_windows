@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # setup-mode.sh — interactive methodology mode selector (v1.8+).
 #
 # Sets the vault's .vault-meta/mode.json and optionally seeds template

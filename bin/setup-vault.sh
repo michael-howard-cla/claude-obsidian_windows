@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # claude-obsidian vault setup script
 # Run this ONCE before opening Obsidian for the first time.
 # Usage: bash bin/setup-vault.sh [optional: /path/to/vault]

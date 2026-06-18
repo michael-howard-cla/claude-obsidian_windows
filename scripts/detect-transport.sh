@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # detect-transport.sh — discover which vault-mutation transports are available
 # on this machine, write a normalized JSON snapshot to .vault-meta/transport.json,
 # and pick a preferred transport per the v1.7 fallback chain.
