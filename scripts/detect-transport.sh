@@ -128,13 +128,27 @@ if command -v obsidian-cli >/dev/null 2>&1; then
   # without wrapping quotes.
   CLI_VERSION_RAW="$(obsidian-cli --version 2>/dev/null | head -1 || echo unknown)"
   CLI_VERSION="$(printf '%s' "$CLI_VERSION_RAW" | json_escape || echo '"unknown"')"
+elif command -v 'Obsidian.com' >/dev/null 2>&1; then
+  # Windows: Obsidian 1.12+ ships the CLI as Obsidian.com (console subsystem wrapper).
+  # It uses `version` (not --version) and vault=<name> syntax.
+  if 'Obsidian.com' version >/dev/null 2>&1; then
+    CLI_PRESENT=true
+    CLI_BINARY="Obsidian.com"
+    CLI_VERSION_RAW="$('Obsidian.com' version 2>/dev/null | head -1 || echo unknown)"
+    CLI_VERSION="$(printf '%s' "$CLI_VERSION_RAW" | json_escape || echo '"unknown"')"
+  fi
 elif command -v obsidian >/dev/null 2>&1; then
   # Obsidian 1.12+ ships `obsidian` as the CLI binary on some platforms.
-  # We treat it as cli-capable if it accepts a --cli or --version flag without launching the GUI.
+  # Try both --version (obsidian-cli npm) and version (built-in CLI) to handle either.
   if obsidian --version >/dev/null 2>&1; then
     CLI_PRESENT=true
     CLI_BINARY="obsidian"
     CLI_VERSION_RAW="$(obsidian --version 2>/dev/null | head -1 || echo unknown)"
+    CLI_VERSION="$(printf '%s' "$CLI_VERSION_RAW" | json_escape || echo '"unknown"')"
+  elif obsidian version >/dev/null 2>&1; then
+    CLI_PRESENT=true
+    CLI_BINARY="obsidian"
+    CLI_VERSION_RAW="$(obsidian version 2>/dev/null | head -1 || echo unknown)"
     CLI_VERSION="$(printf '%s' "$CLI_VERSION_RAW" | json_escape || echo '"unknown"')"
   fi
 fi
