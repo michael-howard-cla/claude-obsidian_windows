@@ -1,2 +1,2 @@
-# Force LF line endings for shell scripts so WSL bash can run them on Windows
-*.sh text eol=lf
+# Force LF line endings and no BOM for shell scripts so WSL bash can run them on Windows
+*.sh text eol=lf encoding=utf-8
