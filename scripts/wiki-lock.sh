@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 # wiki-lock.sh — per-file advisory locking for safe multi-writer vault mutation.
 #
 # Closes the latent multi-writer corruption bug in v1.6 where two parallel

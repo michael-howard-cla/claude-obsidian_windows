@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 # setup-retrieve.sh — opt-in bootstrap for wiki-retrieve (v1.7+).
 #
 # Provisions the contextual-prefix + BM25 + rerank pipeline. Idempotent;
